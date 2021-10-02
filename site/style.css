@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.slide {
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  opacity: 0;
+}
+
+.active {
+  opacity: 1;
+}
+
+.slide0 {
+  background: chocolate;
+  z-index: 30;
+}
+
+.slide1 {
+  background: blueviolet;
+}
+
+.slide2 {
+  background: darkgreen;
+}
+
+.slide3 {
+  background: #229efd;
+}
+.slide4 {
+  background: #9E0706;
+}
+.slide5 {
+  background: #017E8B;
+}
+
+.navigations {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -200px;
+  margin-top: -200px;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.top-arrow {
+  width: 100%;
+  text-align: center;
+}
+
+.center-arrow {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+
+.bottom-arrow {
+  width: 100%;
+  text-align: center;
+}
+
+.slide.animation_right {
+  transform: translate(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 90;
+  opacity: 1;
+}
+.slide.animation_left {
+  transform: translate(100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 90;
+  opacity: 1;
+}
+
+.slide.active_up {
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 90;
+  opacity: 1;
+}
+.slide.active_bottom {
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 90;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+/* arrow common style */
+.arrow {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  cursor: pointer;
+}
+
+.arrow-top {
+  transform: rotate(-45deg);
+}
+.arrow-right {
+  transform: rotate(45deg);
+}
+.arrow-bottom {
+  transform: rotate(135deg);
+}
+.arrow-left {
+  transform: rotate(-135deg);
+}
+.arrow-top-narrow {
+  transform: rotate(-45deg) skew(-15deg, -15deg);
+}
+.arrow-top-wide {
+  transform: rotate(-45deg) skew(7deg, 7deg);
+}
+.arrow-top-left {
+  transform: rotate(-90deg) skew(-10deg, -10deg);
+}
+.arrow-top-right {
+  transform: rotate(0) skew(-10deg, -10deg);
+}
+.arrow-bottom-left {
+  transform: rotate(180deg) skew(-10deg, -10deg);
+}
+.arrow-bottom-right {
+  transform: rotate(90deg) skew(-10deg, -10deg);
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Слайдер | Проект 3</title>
+  </head>
+  <body>
+    <div class="container">
+
+         <div class="navigations">
+
+             <div class="top-arrow">
+                 <span class="arrow arrow-top click_up" data-id="2"></span>
+             </div>
+
+             <div class="center-arrow">
+
+                 <span class="arrow arrow-left click_left" data-id="0"></span>
+                 <span class="arrow arrow-right click_right" data-id="1"></span>
+
+             </div>
+
+             <div class="bottom-arrow">
+                 <span class="arrow arrow-bottom click_bottom" data-id="3"></span>
+             </div>
+
+
+         </div>
+
+
+        <div class="slide slide0" data-id="0" data-direction="left">
+          Это первый блок
+        </div>
+
+        <div class="slide slide1" data-id="1" data-direction="top">
+          Это блок второй, правый
+        </div>
+
+        <div class="slide slide2" data-id="2" data-direction="right" >
+          Это третий блок, вверхний
+        </div>
+
+        <div class="slide slide4" data-id="4" data-direction="right" >
+          Это пятый правый блок
+        </div>
+
+        <div class="slide slide5" data-id="5" data-direction="right" >
+          Это шестой правый блок
+        </div>
+
+        <div class="slide slide3" data-id="3" data-direction="bottom">
+          Это 4 блок, нижний
+        </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
