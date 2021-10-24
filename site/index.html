@@ -1,63 +1,138 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--  <head>-->
+<!--    <meta charset="UTF-8" />-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+<!--    <link-->
+<!--      rel="stylesheet"-->
+<!--      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"-->
+<!--    />-->
+<!--    <link rel="stylesheet" href="style.css" />-->
+<!--    <title>Слайдер | Проект 3</title>-->
+<!--  </head>-->
+<!--  <body>-->
+<!--    <div class="container">-->
+
+<!--         <div class="navigations">-->
+
+<!--             <div class="top-arrow">-->
+<!--                 <span class="arrow arrow-top click_up" data-id="2"></span>-->
+<!--             </div>-->
+
+<!--             <div class="center-arrow">-->
+
+<!--                 <span class="arrow arrow-left click_left" data-id="0"></span>-->
+<!--                 <span class="arrow arrow-right click_right" data-id="1"></span>-->
+
+<!--             </div>-->
+
+<!--             <div class="bottom-arrow">-->
+<!--                 <span class="arrow arrow-bottom click_bottom" data-id="3"></span>-->
+<!--             </div>-->
+
+
+<!--         </div>-->
+
+
+<!--        <div class="slide slide0" data-id="0" data-direction="left">-->
+<!--          Это первый блок-->
+<!--        </div>-->
+
+<!--        <div class="slide slide1" data-id="1" data-direction="top">-->
+<!--          Это блок второй, правый-->
+<!--        </div>-->
+
+<!--        <div class="slide slide2" data-id="2" data-direction="right" >-->
+<!--          Это третий блок, вверхний-->
+<!--        </div>-->
+
+<!--        <div class="slide slide4" data-id="4" data-direction="right" >-->
+<!--          Это пятый правый блок-->
+<!--        </div>-->
+
+<!--        <div class="slide slide5" data-id="5" data-direction="right" >-->
+<!--          Это шестой правый блок-->
+<!--        </div>-->
+
+<!--        <div class="slide slide3" data-id="3" data-direction="bottom">-->
+<!--          Это 4 блок, нижний-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <script src="app.js"></script>-->
+<!--  </body>-->
+<!--</html>-->
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Слайдер | Проект 3</title>
-  </head>
-  <body>
-    <div class="container">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="icon" href="https://2x2tv.ru/images/favicon/favicon.ico" sizes="any">
+   <!-- <script async src="app.js"></script>-->
+</head>
+<body>
 
-         <div class="navigations">
+    <script>
 
-             <div class="top-arrow">
-                 <span class="arrow arrow-top click_up" data-id="2"></span>
-             </div>
+        function sum(a) {
+            return function (b) {
+                if(!b) return console.log(a)
+                return sum( a += b)
+            }
+        }
 
-             <div class="center-arrow">
+        sum(4)(5)(3)(2)(3)(4)(4)(1)(5)(6)(4)(5)(3)(2)(3)(4)(4)(1)(5)(6)(4)(5)(3)(2)(3)(4)(4)(1)(5)(6)(4)(5)(3)(2)(3)(4)(4)(1)(5)(6)(4)(5)(3)(2)(3)(4)(4)(1)(5)(6)(4)(5)(3)(2)(3)(4)(4)(1)(5)(6)(4)(); //226
 
-                 <span class="arrow arrow-left click_left" data-id="0"></span>
-                 <span class="arrow arrow-right click_right" data-id="1"></span>
+/*
+        let sum = (a,b) => a+b
+        let mul = (a,b) => a*b
 
-             </div>
+        function calculate(a) {
+        }
 
-             <div class="bottom-arrow">
-                 <span class="arrow arrow-bottom click_bottom" data-id="3"></span>
-             </div>
+        calculate(sum)(3)(2) //5
+        calculate(mul)(3)(2) //6
+*/
+    const dup = mass => [...mass, ...mass]
+
+    console.log(dup([1, 2, 3, 4, 5]));
 
 
-         </div>
+    </script>
 
+    <ul>
+        <li>apple</li>
+        <li>banane</li>
+    </ul>
 
-        <div class="slide slide0" data-id="0" data-direction="left">
-          Это первый блок
-        </div>
+    <div class="content">
 
-        <div class="slide slide1" data-id="1" data-direction="top">
-          Это блок второй, правый
-        </div>
-
-        <div class="slide slide2" data-id="2" data-direction="right" >
-          Это третий блок, вверхний
-        </div>
-
-        <div class="slide slide4" data-id="4" data-direction="right" >
-          Это пятый правый блок
-        </div>
-
-        <div class="slide slide5" data-id="5" data-direction="right" >
-          Это шестой правый блок
-        </div>
-
-        <div class="slide slide3" data-id="3" data-direction="bottom">
-          Это 4 блок, нижний
-        </div>
     </div>
-    <script src="app.js"></script>
-  </body>
+
+    <script>
+        let fruits = document.querySelector('ul')
+        let content = document.querySelector('.content')
+
+        console.log('fruits', fruits)
+
+        function clickLi(event) {
+            content.innerHTML = event.target.innerHTML
+        }
+
+        fruits.addEventListener('click', clickLi)
+
+
+        function f1(a, b) {
+            console.log(a, b)
+        }
+
+        let f2 = f1.bind(null, 'foo')
+        f2('222', '4333')
+
+
+    </script>
+
+</body>
 </html>
